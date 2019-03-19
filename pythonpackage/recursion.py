@@ -2,10 +2,10 @@ def sum_array(array):
     '''
     Return sum of all items in array
     '''
-    x = 0
+    total = 0
     for i in array:
         total += i
-    return x
+    return total
 
 def fibonacci(n):
     '''
@@ -20,8 +20,13 @@ def factorial(n):
     '''
     Return n!
     '''
+<<<<<<< HEAD
     if n == 1:
         return n
+=======
+    if n == 1 or n == 0:
+        return 1
+>>>>>>> 97a53f53b4a85643ec4415da575d46226053d60c
     else:
      return n * factorial(n-1)
 

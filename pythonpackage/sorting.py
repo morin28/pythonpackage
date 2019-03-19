@@ -3,21 +3,29 @@ def bubble_sort(items):
     Return array of items, sorted in ascending order
     '''
     for i in range(0, len(items) -1):
-	    for j in range(0, len(items) - 1 - i):
-		if items[j] > items[j+1]:
-		    items[j], items[j+1] = items[j+1], items[j]
-	return items
+	    	for j in range(0, len(items) - 1 - i):
+	    		if items[j] > items[j+1]:
+		   		 items[j], items[j+1] = items[j+1], items[j]
+    return items
 
 def merge_sort(items):
     '''
     Return array of items, sorted in ascending order
     '''
     def merge(A, B):
+<<<<<<< HEAD
    	new_list = []
         while len(A) > 0 and len(B) > 0:
             if A[0] < B[0]:
                 new_list.append(A[0])
             	A.pop(0)
+=======
+        new_list = []
+        while len(A) > 0 and len(B) > 0:
+            if A[0] < B[0]:
+                new_list.append(A[0])
+                A.pop(0)
+>>>>>>> 97a53f53b4a85643ec4415da575d46226053d60c
             else:
                 new_list.append(B[0])
                 B.pop(0)
@@ -40,21 +48,28 @@ def merge_sort(items):
     # call merge_sort function on each half of list
     return merge(a,b)
 
-def quick_sort(items):
-    '''
-    Return array of items, sorted in ascending order
-    '''
-    if len(items) == 1 or len(items) == 0:
+def quick_sort(items, index=-1):
+    len_i = len(items)
+
+    if len_i <= 1:
+        # Logic Error
+        # identified with test run [1,5,4,3, 2, 6, 5, 4, 3, 8, 6, 5, 3, 1]
+        # len <= 1
         return items
-    else:
-        pivot = items[0]
-        i = 0
-        for j in range(len(items)-1):
-            if items[j+1] < pivot:
-                items[j+1],items[i+1] = items[i+1], items[j+1]
-                i += 1
-        items[0],items[i] = items[i],x[0]
-        first_part = quicksort(items[:i])
-        second_part = quicksort(items[i+1:])
-        first_part.append(items[i])
-        return first_part + second_part
+
+    pivot = items[index]
+    small = []
+    large = []
+    dup = []
+    for i in items:
+        if i < pivot:
+            small.append(i)
+        elif i > pivot:
+            large.append(i)
+        elif i == pivot:
+            dup.append(i)
+
+    small = quick_sort(small)
+    large = quick_sort(large)
+
+    return small + dup + large
