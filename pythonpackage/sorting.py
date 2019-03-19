@@ -22,7 +22,7 @@ def merge_sort(items):
     a = merge_sort(items[:middle])
     b = merge_sort(items[middle:])
     # call merge_sort function on each half of list
-    return merge(a, b)
+    return merge_sort(a, b)
 
 def quick_sort(items):
     '''
@@ -37,7 +37,7 @@ def quick_sort(items):
             if items[j+1] < pivot:
                 items[j+1],items[i+1] = items[i+1], items[j+1]
                 i += 1
-        items[0],items[i] = items[i],x[0]
+        items[0],items[i] = items[i],item[0]
         first_part = quicksort(items[:i])
         second_part = quicksort(items[i+1:])
         first_part.append(items[i])
