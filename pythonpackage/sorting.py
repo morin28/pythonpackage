@@ -12,6 +12,7 @@ def merge_sort(items):
     '''
     Return array of items, sorted in ascending order
     '''
+	
     len_i = len(items)
     # Base case. A list of size 1 is sorted.
     if len_i <= 1:
@@ -22,7 +23,7 @@ def merge_sort(items):
     a = merge_sort(items[:middle])
     b = merge_sort(items[middle:])
     # call merge_sort function on each half of list
-    return merge_sort(a, b)
+    return merge_sort(a + b)
 
 def quick_sort(items):
     '''
