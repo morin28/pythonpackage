@@ -1,7 +1,7 @@
 def sum_array(array):
     '''
     Return sum of all items in array
-    ''''
+    '''
     x = 0
     for i in array:
         total += i
