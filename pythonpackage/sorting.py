@@ -40,7 +40,7 @@ def merge_sort(items):
     # call merge_sort function on each half of list
     return merge(a,b)
 
-def quicksort(items):
+def quick_sort(items):
     if len(items) == 1 or len(items) == 0:
         return items
     else:
