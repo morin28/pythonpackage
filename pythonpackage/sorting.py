@@ -40,10 +40,7 @@ def merge_sort(items):
     # call merge_sort function on each half of list
     return merge(a,b)
 
-def quick_sort(items):
-    '''
-    Return array of items, sorted in ascending order
-    '''
+def quicksort(items):
     if len(items) == 1 or len(items) == 0:
         return items
     else:
@@ -53,7 +50,7 @@ def quick_sort(items):
             if items[j+1] < pivot:
                 items[j+1],items[i+1] = items[i+1], items[j+1]
                 i += 1
-        items[0],items[i] = items[i],item[0]
+        items[0],items[i] = items[i],items[0]
         first_part = quicksort(items[:i])
         second_part = quicksort(items[i+1:])
         first_part.append(items[i])
