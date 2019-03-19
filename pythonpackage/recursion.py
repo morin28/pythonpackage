@@ -2,10 +2,10 @@ def sum_array(array):
     '''
     Return sum of all items in array
     '''
-    x = 0
+    total = 0
     for i in array:
         total += i
-    return x
+    return total
 
 def fibonacci(n):
     '''
